@@ -4,7 +4,10 @@ jobs:
   test: # Can be changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2   # Change to latest
+      - uses: actions/checkout@v5   # Change to latest
       - run: sudo apt-get install pandoc inkscape texlive-xetex
       - run: pip install nbconvert
       - run: python -m nbconvert --to pdf ./notes/pint_and_boiling_point.ipynb
+      - uses: actions/upload-artifact/@4
+        with:
+          path: notes/pint_and_boiling_point.pdf
