@@ -4,4 +4,5 @@ jobs:
   test: # Can be changed
     runs-on: ubuntu-latest
     steps:
-      - run: echo Hello World
+      - run: pip install nbconvert
+      - run: python -m nbconvert ./notes/pint_and_boiling_point.ipynb
