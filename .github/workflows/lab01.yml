@@ -4,6 +4,7 @@ jobs:
   test: # Can be changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2 # USe latest
+      - uses: actions/checkout@v2   # Change to latest
+      - run: sudo apt-get install pandoc
       - run: pip install nbconvert
       - run: python -m nbconvert --to pdf ./notes/pint_and_boiling_point.ipynb
