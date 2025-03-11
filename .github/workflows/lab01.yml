@@ -1,0 +1,7 @@
+name: lab01 # Can be changed
+on: push
+jobs:
+  test: # Can be changed
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello World
