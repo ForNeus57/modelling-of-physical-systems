@@ -4,6 +4,6 @@ jobs:
   test: # Can be changed
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2 # USe latest
       - run: pip install nbconvert
-      - uses: actions/checkout
-      - run: python -m nbconvert ./notes/pint_and_boiling_point.ipynb
+      - run: python -m nbconvert --to pdf ./notes/pint_and_boiling_point.ipynb
