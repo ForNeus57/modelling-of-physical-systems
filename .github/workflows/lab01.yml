@@ -4,9 +4,13 @@ jobs:
   test: # Can be changed
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4   # Change to latest
+      - uses: actions/checkout@v4
       - run: sudo apt-get install pandoc inkscape texlive-xetex
-      - run: pip install nbconvert ipykernel pint matplotlib scipy numpy open-atmos-jupyter-utils
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip' # caching pip dependencies
+      - run: pip install -r requirements.txt
       - run: python -m nbconvert --to pdf --execute ./notes/pint_and_boiling_point.ipynb
       - uses: actions/upload-artifact@v4
         with:
