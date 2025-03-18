@@ -11,7 +11,7 @@ jobs:
           python-version: '3.13'
           cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
-      - run: python -m nbconvert --to pdf --execute ./notes/pint_and_boiling_point.ipynb
+      - run: python -m nbconvert --to pdf --execute ./labs/02.ipynb
       - uses: actions/upload-artifact@v4
         with:
           path: notes/pint_and_boiling_point.pdf  # Add caching to github actions
