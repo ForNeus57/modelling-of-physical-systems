@@ -1,7 +1,12 @@
 name: lab02 # Can be changed
-on: push
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - './labs/02/**'
 jobs:
-  test: # Can be changed
+  run: # Can be changed
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -9,9 +14,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-          cache: 'pip' # caching pip dependencies
+          cache: 'pip'
       - run: pip install -r requirements.txt
-      - run: python -m nbconvert --to pdf --execute ./labs/02.ipynb
+      - run: python -m nbconvert --to pdf --execute ./labs/02/02.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: ./labs/02.pdf  # Add caching to github actions
+          path: ./labs/02/02.pdf  # Add caching to github actions
