@@ -1,4 +1,4 @@
-name: lab02 # Can be changed
+name: lab02
 on:
   push
   #:
@@ -7,7 +7,7 @@ on:
   #  paths:
   #    - ./'labs/02/**'
 jobs:
-  run: # Can be changed
+  run:
     runs-on: ubuntu-latest
     name: Build LAB 02 Homework .PDF Artifact
     steps:
