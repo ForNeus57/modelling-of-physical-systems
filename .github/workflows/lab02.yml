@@ -1,4 +1,4 @@
-name: lab01 # Can be changed
+name: lab02 # Can be changed
 on: push
 jobs:
   test: # Can be changed
@@ -14,4 +14,4 @@ jobs:
       - run: python -m nbconvert --to pdf --execute ./labs/02.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: notes/pint_and_boiling_point.pdf  # Add caching to github actions
+          path: .labs/02.pdf  # Add caching to github actions
