@@ -13,9 +13,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: awalsh128/cache-apt-pkgs-action@latest
-          with:
-            packages: pandoc inkscape texlive-xetex
-            version: 1.0
+        with:
+          packages: pandoc inkscape texlive-xetex
+          version: 1.0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
@@ -25,4 +25,4 @@ jobs:
       - run: python -m nbconvert --to pdf --execute ./labs/02/02.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: ./labs/02/02.pdf  # Add caching to github actions
+          path: ./labs/02/02.pdf
