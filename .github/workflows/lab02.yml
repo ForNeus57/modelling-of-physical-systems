@@ -16,6 +16,7 @@ jobs:
         with:
           packages: pandoc inkscape texlive-xetex
           version: 1.0
+          execute_install_scripts: true
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
