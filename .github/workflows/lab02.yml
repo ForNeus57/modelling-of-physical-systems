@@ -9,9 +9,13 @@ on:
 jobs:
   run: # Can be changed
     runs-on: ubuntu-latest
+    name: Build LAB 02 Homework .PDF Artifact
     steps:
       - uses: actions/checkout@v4
-      - run: sudo apt-get install pandoc inkscape texlive-xetex
+      - uses: awalsh128/cache-apt-pkgs-action@latest
+          with:
+            packages: pandoc inkscape texlive-xetex
+            version: 1.0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
