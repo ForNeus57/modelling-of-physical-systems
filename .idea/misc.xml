@@ -3,4 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="MoPS" />
   </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="MoPS" project-jdk-type="Python SDK" />
 </project>
