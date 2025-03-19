@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
     paths:
-      - './labs/02/**'
+      - 'labs/02/**'
 jobs:
   run: # Can be changed
     runs-on: ubuntu-latest
@@ -16,7 +16,7 @@ jobs:
           python-version: '3.13'
           cache: 'pip'
       - run: pip install -r requirements.txt
-      - run: python -m nbconvert --to pdf --execute ./labs/02/02.ipynb
+      - run: python -m nbconvert --to pdf --execute labs/02/02.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: ./labs/02/02.pdf  # Add caching to github actions
+          path: labs/02/02.pdf  # Add caching to github actions
