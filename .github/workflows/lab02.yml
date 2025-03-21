@@ -12,12 +12,7 @@ jobs:
     name: Build LAB 02 Homework .PDF Artifact
     steps:
       - uses: actions/checkout@v4
-      - uses: awalsh128/cache-apt-pkgs-action@latest
-        with:
-          packages: pandoc
-          version: 1.0
-          execute_install_scripts: true
-      - run: sudo apt-get install inkscape texlive-xetex
+      - run: sudo apt-get install pandoc inkscape texlive-xetex
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
