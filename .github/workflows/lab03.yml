@@ -4,26 +4,21 @@ on:
     branches:
       - 'main'
     paths:
-    - ./'labs/03/**'
+      - ./'labs/03/**'
 jobs:
   run:
     runs-on: ubuntu-latest
     name: Build LAB 03 Homework .PDF Artifact
     steps:
       - uses: actions/checkout@v4
-#      - uses: awalsh128/cache-apt-pkgs-action@latest
-#        with:
-#          packages: pandoc
-#          version: 1.0
-#          execute_install_scripts: true
-#      - run: sudo apt-get install inkscape texlive-xetex
-#      - uses: actions/setup-python@v5
-#        with:
-#          python-version: '3.12'
-#          cache: 'pip'
-#          cache-dependency-path: ./requirements.txt
-#      - run: pip install -r ./requirements.txt
-#      - run: python -m nbconvert --to pdf --execute ./labs/03/03.ipynb
-#      - uses: actions/upload-artifact@v4
-#        with:
-#          path: ./labs/03/03.pdf
+      - run: sudo apt-get install pandoc inkscape texlive-xetex
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: ./requirements.txt
+      - run: pip install -r ./requirements.txt
+      - run: python -m nbconvert --to pdf --execute ./labs/03/03.ipynb
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./labs/03/03.pdf

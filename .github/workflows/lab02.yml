@@ -1,11 +1,10 @@
 name: lab02
 on:
-  push
-  #:
-  #  branches:
-  #    - 'main'
-  #  paths:
-  #    - ./'labs/02/**'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - ./'labs/02/**'
 jobs:
   run:
     runs-on: ubuntu-latest
