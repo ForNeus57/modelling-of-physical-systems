@@ -5,6 +5,7 @@ on:
       - 'main'
     paths:
       - 'labs/02/**'
+      - '.github/workflows/lab02.yml'
 jobs:
   run:
     runs-on: ubuntu-latest

@@ -5,6 +5,7 @@ on:
       - 'main'
     paths:
       - 'labs/03/**'
+      - '.github/workflows/lab03.yml'
 jobs:
   run:
     runs-on: ubuntu-latest
