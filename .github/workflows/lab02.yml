@@ -4,13 +4,14 @@ on:
     branches:
       - 'main'
     paths:
-      - labs/02/**
+      - 'labs/02/**'
 jobs:
   run:
     runs-on: ubuntu-latest
     name: Build LAB 02 Homework .PDF Artifact
     steps:
       - uses: actions/checkout@v4
+      - run: sudo apt-get update
       - run: sudo apt-get install pandoc inkscape texlive-xetex
       - uses: actions/setup-python@v5
         with:
