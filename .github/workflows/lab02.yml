@@ -4,7 +4,7 @@ on:
     branches:
       - 'main'
     paths:
-      - ./'labs/02/**'
+      - './labs/02/**'
 jobs:
   run:
     runs-on: ubuntu-latest
