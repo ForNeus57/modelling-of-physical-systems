@@ -20,7 +20,7 @@ jobs:
           cache: 'pip'
           cache-dependency-path: ./requirements.txt
       - run: pip install -r ./requirements.txt
-      - run: python -m nbconvert --to pdf --execute ./labs/06/06.ipynb
+      - run: python -m nbconvert --to pdf --execute ./labs/06/assigment.ipynb
       - uses: actions/upload-artifact@v4
         with:
-          path: ./labs/06/06.pdf
+          path: ./labs/06/assigment.pdf
