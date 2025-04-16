@@ -1,0 +1,26 @@
+name: lab06
+on:
+  push:
+    branches:
+      - 'main'
+    paths:
+      - 'labs/06/**'
+      - '.github/workflows/lab06.yml'
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    name: Build LAB 06 Homework .PDF Artifact
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update
+      - run: sudo apt-get install pandoc inkscape texlive-xetex
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: ./requirements.txt
+      - run: pip install -r ./requirements.txt
+      - run: python -m nbconvert --to pdf --execute ./labs/06/06.ipynb
+      - uses: actions/upload-artifact@v4
+        with:
+          path: ./labs/06/06.pdf
