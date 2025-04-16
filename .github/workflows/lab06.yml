@@ -24,4 +24,5 @@ jobs:
       - run: python -m nbconvert --to pdf --execute ./labs/06/assigment.ipynb
       - uses: actions/upload-artifact@v4
         with:
+          name: dominik_breksa_lab06_assigment
           path: ./labs/06/assigment.pdf
